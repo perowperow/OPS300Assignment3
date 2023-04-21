@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: lab1-step3
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: lab1-step3
@@ -14,9 +14,7 @@ spec:
     spec:
       containers:
       - name: lab1-step3
-        image: 192.168.2.41/lab1_step3
+        image: lab1_step3
         ports:
         - containerPort: 80
-      imagePullSecrets:
-      - name: myrepo
 
