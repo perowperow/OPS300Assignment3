@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab1-step3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lab1-step3
+  template:
+    metadata:
+      labels:
+        app: lab1-step3
+    spec:
+      containers:
+      - name: lab1-step3
+        image: 192.168.2.41/lab1_step3
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: myrepo
+
